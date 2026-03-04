@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebP Converter</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 16px; max-width: 960px; }
+      .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+      .box { border: 1px solid #ddd; border-radius: 14px; padding: 14px; }
+      #drop { border: 2px dashed #bbb; border-radius: 14px; padding: 18px; text-align: center; }
+      #drop.drag { border-color: #333; }
+      button { padding: 10px 12px; cursor: pointer; border-radius: 10px; border: 1px solid #ccc; background: #fff; }
+      input[type="range"]{ width: 220px; }
+      pre { background:#111; color:#ddd; padding:12px; border-radius:12px; height: 260px; overflow:auto; }
+      ul { margin: 8px 0 0; padding-left: 18px; }
+      small { color:#555; }
+    </style>
+  </head>
+  <body>
+    <h1>WebP Converter</h1>
+
+    <div class="box">
+      <div id="drop">
+        <b>Перетащи картинки сюда</b>
+        <div style="margin-top:8px;"><small>или выбери файлы кнопкой ниже</small></div>
+      </div>
+
+      <div class="row" style="margin-top:12px;">
+        <input id="pick" type="file" accept=".jpg,.jpeg,.png" multiple />
+        <button id="convert">Конвертировать в WebP</button>
+        <button id="clear">Очистить</button>
+      </div>
+
+      <div class="row" style="margin-top:10px;">
+        <label>Quality: <b id="qLabel">100</b></label>
+        <input id="quality" type="range" min="1" max="100" value="100" />
+        <small>Результаты скачаются автоматически</small>
+      </div>
+
+      <h3>Файлы</h3>
+      <ul id="list">Файлы не выбраны</ul>
+    </div>
+
+    <h3>Лог</h3>
+    <pre id="log"></pre>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
